@@ -1,0 +1,246 @@
+---
+slug: caracteristicas-de-markdown
+title: Características de Markdown
+date: 2023-01-24
+tags: [practice, markdown, mdx]
+authors: [thejobgg]
+---
+import HelloDocusaurus from '@site/src/components/HelloDocusaurus'
+import HalfLine from '@site/src/components/HalfLine'
+
+Post dedicado a la explicación de algúnas caracteristicas de `.md` y `.mdx` para renderizado de componentes.
+
+![Image example](@site/static/img/md.webp)
+<!--truncate-->
+
+<hr/>
+
+## Insertar listas (ordenadas y desordenadas)
+
+Basta con poner un guion para una lista desordenada y enumerar cada uno de los elementos en una lista ordenada
+```md
+- 🍊 Naranja 
+- 🍉 Sandia
+- 🍓 Fresa
+
+1. Primero en la lista
+2. Segundo en la lista
+3. Tercero en la lista
+```
+
+- 🍊 Naranja 
+- 🍉 Sandia
+- 🍓 Fresa
+
+1. Primero en la lista
+2. Segundo en la lista
+3. Tercero en la lista
+
+<hr/>
+
+## Insertar una imagen
+```md
+![Image example](@site/static/img/frog_8-bits.png)
+```
+![Image example](@site/static/img/4x_frog_8_bits.png)
+
+<hr/>
+
+## Insertar un link
+Los enlaces o "links" en Markdown nos permiten navegar de manera sencilla a través de diferentes secciones de un sitio web, así como también hacer referencia a distintos recursos como imágenes o archivos, y redirigir a enlaces externos. De esta manera, los enlaces son una herramienta esencial para la navegación y la organización del contenido en un sitio web.
+
+
+**Enlace al home del sitio**
+```md
+[Go to Home](/)
+```
+[Go to Home](/)
+
+<HalfLine />
+
+**Enlace a la imagen de la sección anterior**
+```md
+[Ver imagen](@site/static/img/4x_frog_8_bits.png)
+```
+[Ver imagen](@site/static/img/4x_frog_8_bits.png)
+
+<HalfLine />
+
+**Ir a la documentación de Docusaurus 2**
+
+Por defecto abre el enlace en una ventana nueva.
+```md
+[Ir a la doc oficial](https://docusaurus.io/)
+```
+
+[Ir a la doc oficial](https://docusaurus.io/)
+
+<hr/>
+
+## Insertar un bloque de código (.mdx)
+En Markdown, es posible insertar bloques de código para mostrar componentes específicos de una manera clara y fácil de leer. Esto se logra mediante el uso de un formato especializado y un resaltado de colores que ayuda a identificar las diferentes partes del código. También se proporciona la opción de copiar el código directamente para su uso. 
+
+Además, se puede mostrar el componente en cuestión renderizado para una mejor comprensión del código.
+
+:::info
+Para poder renderizar componentes la extensión debe ser `.mdx`
+:::
+
+```jsx title="src/components/HelloDocusaurus.js"
+function HelloDocusaurus() {
+    return (
+        <h1 style={{textAlign: 'center'}}>
+          Hello, Docusaurus!
+        </h1>
+    )
+}
+```
+Componente renderizado:
+<HelloDocusaurus />
+<hr/>
+
+## Admonitions
+Docusaurus nos ofrece los admonitions que son bloques de contenido utilizados para resaltar un mensaje importante o algo a tener en cuenta. 
+
+Estos pueden ser de los siguientes tipos:
+- Note
+- Tip
+- Info
+- Caution
+- Danger
+
+### Note
+
+```mdx
+:::note
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+```
+:::note
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+
+<HalfLine />
+
+### Tip
+```mdx
+:::tip
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+```
+:::tip
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+
+<HalfLine />
+
+### Info
+```mdx
+:::info
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+```
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+
+<HalfLine />
+
+### Caution
+```mdx
+:::caution
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+```
+:::caution
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+
+<HalfLine />
+
+### Danger
+```mdx
+:::danger
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+```
+
+:::danger
+
+Some **content** with _Markdown_ `syntax`. 
+Check [this `api`](/blog/features-of-md#admonitions).
+
+:::
+
+<hr/>
+
+## Quotes
+Docusaurus también ofrece la posibilidad de incluir quotes (citas) dentro de un archivo markdown de la siguiente manera:
+
+#### Frases celebres de "El Quijote"
+> _"La ingratitud es la hija de la soberbia."_
+> 
+> _"La virtud más es perseguida de los malos que amada de los buenos."_
+>
+> _"Las tristezas no se hicieron para las bestias, sino para los hombres; pero si los hombres las sienten demasiado, se vuelven bestias."_
+
+
+```md
+> _"La ingratitud es la hija de la soberbia."_
+> 
+> _"La virtud más es perseguida de los malos que amada de los buenos."_
+>
+> _"Las tristezas no se hicieron para las bestias, sino para los hombres; pero si los hombres las sienten demasiado, se vuelven bestias."_
+```
+
+<hr/>
+
+## Details
+Dentro de markdown es posible incrustar código HTML, por ejemplo la etiqueta o tag `details` el cual es útil para anidar contenido; 
+ademas de estilarlos para una buena apariencia.
+
+#### Ejemplo del tag `<details>`
+
+<details>
+  <summary>Click aquí!</summary>
+  <div>
+    <div>Puedes colocar aquí contenido</div>
+    <br/>
+    <details>
+      <summary>
+        Este contenido esta anidado dentro de otro details lo cual, se puede hacer!
+      </summary>
+      <div>
+        Más contenido anidado... ✍
+      </div>
+    </details>
+  </div>
+</details>
