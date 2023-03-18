@@ -1,3 +1,8 @@
+---
+sidebar_label: 'Another doc for future...'
+description: Doc para llenar después.
+---
+
 # Título principal
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce commodo ex sit amet nibh sodales rhoncus. Aenean ac velit commodo, finibus arcu non, varius nulla. Nunc eget nisl vitae enim euismod sodales. Quisque non lacus vitae lorem ultricies facilisis eget non dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst.
 
